@@ -1,0 +1,22 @@
+package Exp1;
+import java.time.LocalDateTime;
+public class MissedCall {
+	String name = "private calller";
+	long ph;
+	LocalDateTime t;
+	
+	public MissedCall(long ph) {
+		this.ph = ph;
+		this.t = LocalDateTime.now();
+		for(Contact i:ContactList.getclist()) {
+			if(i.ph==ph) {
+				this.name = i.name;
+				break;
+			}
+		}
+	}
+	public String toString() {
+		return "Name :"+name+",Phone"+ph+",Time"+t;
+	}
+
+}
